@@ -201,7 +201,7 @@ impl ExecutionProvider for MIGraphXExecutionProvider {
 				migraphx_save_model_path: self.save_model_path.as_ref().map(|c| c.as_ptr()).unwrap_or_else(ptr::null),
 				migraphx_exhaustive_tune: self.exhaustive_tune,
 				migraphx_mem_limit: self.memory_limit as _,
-				migraphx_arena_extended_strategy: match self.arena_extend_strategy {
+				migraphx_arena_extend_strategy: match self.arena_extend_strategy {
 					ArenaExtendStrategy::NextPowerOfTwo => 0,
 					ArenaExtendStrategy::SameAsRequested => 1,
 				}
